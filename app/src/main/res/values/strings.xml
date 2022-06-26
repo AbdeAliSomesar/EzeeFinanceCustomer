@@ -10,4 +10,8 @@
     <string name="please_sign_in_to_enter_in_a_app">Please sign in to enter in a app</string>
     <string name="sign_up">Sign Up</string>
     <string name="enter_your_mobile_no">Enter your mobile no.</string>
+    <string name="home">Home</string>
+    <string name="your_finance">Your Finance</string>
+    <string name="support">Support</string>
+    <string name="profile">Profile</string>
 </resources>

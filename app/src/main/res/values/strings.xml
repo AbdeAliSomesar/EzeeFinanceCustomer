@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">EzeeFinance</string>
+    <string name="kindly_enter_verification_code_sent_to_number">kindly enter verification code sent to\n%s</string>
+    <string name="verification">Verification</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="get_otp">Get OTP</string>
+    <string name="let_s_go">Let\'s Go</string>
+    <string name="resend">Resend ?</string>
+</resources>

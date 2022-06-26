@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="errorEnabled">true</item>
+        <item name="errorTextColor">@color/error_color</item>
+        <item name="minHeight">@dimen/dimen_60dp</item>
+        <item name="hintEnabled">true</item>
+        <item name="hintTextColor">@color/color_gray</item>
+        <item name="android:textSize">@dimen/dimen_12sp</item>
+        <item name="fontFamily">@font/inter_regular</item>
+    </style>
+
+    <style name="AppTextInputEditText">
+
+    </style>
+
+    <style name="AppMainButton" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="android:textColor">@color/white</item>
+        <item name="backgroundTint">@color/colorPrimary</item>
+        <item name="cornerRadius">@dimen/dimen_8dp</item>
+        <item name="fontFamily">@font/inter_semi_bold</item>
+        <item name="android:textSize">@dimen/dimen_18sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">@dimen/dimen_20dp</item>
+        <item name="android:paddingBottom">@dimen/dimen_20dp</item>
+        <item name="paddingStart">@dimen/dimen_20dp</item>
+        <item name="paddingEnd">@dimen/dimen_20dp</item>
+    </style>
+</resources>

@@ -1,16 +1,39 @@
 package `in`.ezeefinance.customer.project
 
 import `in`.ezeefinance.customer.R
+import `in`.ezeefinance.customer.databinding.ActivityProjectHomeBinding
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.result.contract.ActivityResultContract
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI
 
 class ProjectHomeActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityProjectHomeBinding
+    private val viewModel by viewModels<ProjectHomeViewModel>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_project_home)
+        binding = ActivityProjectHomeBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        setUpBottomNav()
+    }
+
+    private fun setUpBottomNav() {
+        binding.apply {
+            val navController =
+                (supportFragmentManager
+                    .findFragmentById(R.id.nav_host_fragment_container)
+                        as NavHostFragment)
+                    .navController
+            NavigationUI.setupWithNavController(
+                bottomNavigationView, navController
+            )
+        }
     }
 
     companion object : ActivityResultContract<Boolean?, Boolean>() {
@@ -21,4 +44,5 @@ class ProjectHomeActivity : AppCompatActivity() {
         override fun parseResult(resultCode: Int, intent: Intent?) = resultCode == RESULT_OK
 
     }
+
 }

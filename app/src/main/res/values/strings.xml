@@ -14,4 +14,7 @@
     <string name="your_finance">Your Finance</string>
     <string name="support">Support</string>
     <string name="profile">Profile</string>
+    <string name="full_name">Full Name</string>
+    <string name="email_address">Email Address</string>
+    <string name="message">Message</string>
 </resources>

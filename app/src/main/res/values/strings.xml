@@ -7,4 +7,7 @@
     <string name="get_otp">Get OTP</string>
     <string name="let_s_go">Let\'s Go</string>
     <string name="resend">Resend ?</string>
+    <string name="please_sign_in_to_enter_in_a_app">Please sign in to enter in a app</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="enter_your_mobile_no">Enter your mobile no.</string>
 </resources>

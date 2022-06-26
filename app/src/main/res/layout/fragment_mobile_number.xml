@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Authentication.MobileNumberFragment">
+    tools:context=".authentication.MobileNumberFragment">
 
     <include
         android:id="@+id/header"
@@ -19,14 +19,27 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/header">
 
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/labelNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="74dp"
+            android:alpha=".5"
+            android:text="@string/enter_your_mobile_no"
+            android:textColor="@color/color_dark_blue"
+            android:textSize="@dimen/dimen_12sp"
+            app:fontFamily="@font/inter_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/numberContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimen_72dp"
+            android:layout_marginTop="@dimen/dimen_16dp"
             android:gravity="center_vertical"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@id/labelNumber">
 
             <Spinner
                 android:id="@+id/countryCodePicker"
@@ -41,26 +54,29 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_8dp"
                 android:background="@android:color/transparent"
                 android:inputType="number"
-                android:textColor="@color/color_dark_blue" />
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/dimen_18sp" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="@dimen/dimen_1dp"
+            android:backgroundTint="@color/color_light_blue"
             app:layout_constraintTop_toBottomOf="@id/numberContainer" />
 
 
         <com.google.android.material.button.MaterialButton
-            style="@style/AppMainButton"
             android:id="@+id/btnSubmit"
-            android:text="@string/get_otp"
+            style="@style/AppMainButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/dimen_76dp"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            android:layout_marginBottom="@dimen/dimen_48dp"
+            android:text="@string/get_otp"
+            app:layout_constraintBottom_toBottomOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

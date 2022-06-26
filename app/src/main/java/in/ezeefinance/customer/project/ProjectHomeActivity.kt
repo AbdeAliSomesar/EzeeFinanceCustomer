@@ -1,12 +1,12 @@
-package `in`.ezeefinance.customer.Authentication
+package `in`.ezeefinance.customer.project
 
 import `in`.ezeefinance.customer.R
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 
-class AuthenticationActivity : AppCompatActivity() {
+class ProjectHomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_authentication_actiivty)
+        setContentView(R.layout.activity_project_home)
     }
 }

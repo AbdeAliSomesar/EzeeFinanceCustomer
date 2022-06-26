@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Authentication.VerifyOtpFragment">
+    tools:context=".authentication.VerifyOtpFragment">
 
     <include
         android:id="@+id/header"
@@ -20,65 +20,127 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/header">
 
-        <com.chaos.view.PinView
-            android:id="@+id/pinView"
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/otpContainer"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_108dp"
-            android:cursorVisible="true"
-            android:inputType="text"
-            android:itemBackground="@mipmap/ic_launcher"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:cursorColor="@color/black"
-            app:cursorWidth="2dp"
-            app:hideLineWhenFilled="false"
-            app:itemCount="4"
-            app:itemHeight="48dp"
-            app:itemRadius="4dp"
-            app:itemSpacing="@dimen/dimen_36dp"
-            app:itemWidth="48dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:lineColor="@color/color_light_blue"
-            app:lineWidth="2dp"
-            app:viewType="line" />
+            android:gravity="center"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/digit1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimen_8dp"
+                android:backgroundTint="@color/color_dark_blue"
+                android:cursorVisible="true"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen_18sp"
+                app:layout_constraintEnd_toStartOf="@+id/digit2"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/digit2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimen_8dp"
+                android:backgroundTint="@color/color_dark_blue"
+                android:cursorVisible="true"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen_18sp"
+                app:layout_constraintEnd_toStartOf="@+id/digit3"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/digit1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/digit3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimen_8dp"
+                android:backgroundTint="@color/color_dark_blue"
+                android:cursorVisible="true"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen_18sp"
+                app:layout_constraintEnd_toStartOf="@+id/digit4"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/digit2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/digit4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimen_8dp"
+                android:backgroundTint="@color/color_dark_blue"
+                android:cursorVisible="true"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen_18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/digit3"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tvTimeout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_12dp"
             android:layout_marginTop="@dimen/dimen_32dp"
             android:textColor="@color/color_dark_blue"
             android:textSize="@dimen/dimen_16sp"
             app:fontFamily="@font/inter_regular"
-            app:layout_constraintStart_toStartOf="@id/pinView"
-            app:layout_constraintTop_toBottomOf="@id/pinView" />
+            app:layout_constraintStart_toStartOf="@id/otpContainer"
+            app:layout_constraintTop_toBottomOf="@id/otpContainer"
+            tools:text="00:30" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tvResend"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/resend"
+            android:layout_marginEnd="@dimen/dimen_12dp"
             android:clickable="true"
             android:focusable="true"
+            android:text="@string/resend"
             android:textColor="@color/color_purple"
             android:textSize="@dimen/dimen_16sp"
             app:fontFamily="@font/inter_regular"
             app:layout_constraintBaseline_toBaselineOf="@id/tvTimeout"
-            app:layout_constraintEnd_toEndOf="@id/pinView"
-            app:layout_constraintTop_toBottomOf="@id/pinView" />
+            app:layout_constraintEnd_toEndOf="@id/otpContainer"
+            app:layout_constraintTop_toBottomOf="@id/otpContainer" />
 
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSubmit"
+            style="@style/AppMainButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            style="@style/AppMainButton"
-            android:text="@string/let_s_go"/>
+            android:layout_marginBottom="@dimen/dimen_48dp"
+            android:text="@string/let_s_go"
+            app:layout_constraintBottom_toBottomOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

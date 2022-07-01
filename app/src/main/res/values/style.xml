@@ -26,4 +26,8 @@
         <item name="paddingStart">@dimen/dimen_20dp</item>
         <item name="paddingEnd">@dimen/dimen_20dp</item>
     </style>
+
+    <style name="ShapeableImageCircular">
+        <item name="cornerSize">50%</item>
+    </style>
 </resources>

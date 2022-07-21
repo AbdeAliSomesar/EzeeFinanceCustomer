@@ -2,8 +2,6 @@
     <string name="app_name">EzeeFinance</string>
     <string name="kindly_enter_verification_code_sent_to_number">kindly enter verification code sent to\n%s</string>
     <string name="verification">Verification</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="get_otp">Get OTP</string>
     <string name="let_s_go">Let\'s Go</string>
     <string name="resend">Resend ?</string>
@@ -17,6 +15,35 @@
     <string name="full_name">Full Name</string>
     <string name="email_address">Email Address</string>
     <string name="message">Message</string>
-    <string name="remaining_amount">Remaining: %,d</string>
-    <string name="rs_amount">Rs.%,d</string>
+    <string name="remaining_amount">Remaining: %,.2f</string>
+    <string name="rs_amount">Rs.%,.2f</string>
+    <string name="your_device_info">Your Device Info</string>
+    <string name="tenure">Tenure</string>
+    <string name="emi">EMI</string>
+    <string name="down_payment">Down Payment</string>
+    <string name="color">Color</string>
+    <string name="name">Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="gender">Gender</string>
+    <string name="date_of_birth">Date of Birth</string>
+    <string name="proof_identity">Proof Identity</string>
+    <string name="document_id">Document ID</string>
+    <string name="pin_code">Pin Code</string>
+    <string name="address">Address</string>
+    <string name="submit">Submit</string>
+    <string name="Rupee_double">₹ %,.2f</string>
+    <string name="pay_online_or_by_cash">Pay Online or By Cash</string>
+    <string name="receivable_payment">Receivable Payment : </string>
+    <string name="rupees_double">Rs. %,2f</string>
+    <string name="loan_id">Loan ID</string>
+    <string name="paid">Paid</string>
+    <string name="due_date">Due Date</string>
+    <string name="remaining_payment">Remaining payment: %,.2f </string>
+    <string name="collect_now">Collect Now</string>
+    <string name="share_payment_link_and_receive_your_amount">Share payment link and receive your amount.</string>
+    <string name="share_link">Share Link</string>
+    <string name="cash_payment">Cash Payment </string>
+    <string name="lorem_ipsum_has_been_the_industry_s_standard">Lorem Ipsum has been the industry\'s standard.</string>
+    <string name="collect_cash">Collect Cash</string>
+
 </resources>

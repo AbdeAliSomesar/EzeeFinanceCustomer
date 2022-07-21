@@ -1,83 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".authentication.MobileNumberFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <include
-        android:id="@+id/header"
-        layout="@layout/layout_auth_header"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+    <data>
+        <variable
+            name="viewModel"
+            type="in.ezeefinance.customer.authentication.AuthenticationViewModel" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginHorizontal="@dimen/dimen_24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/header">
+        android:layout_height="match_parent"
+        tools:context=".authentication.MobileNumberFragment">
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/labelNumber"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="74dp"
-            android:alpha=".5"
-            android:text="@string/enter_your_mobile_no"
-            android:textColor="@color/color_dark_blue"
-            android:textSize="@dimen/dimen_12sp"
-            app:fontFamily="@font/inter_regular"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:id="@+id/numberContainer"
+        <include
+            android:id="@+id/header"
+            layout="@layout/layout_auth_header"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimen_16dp"
-            android:gravity="center_vertical"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/labelNumber">
+            android:layout_height="wrap_content" />
 
-            <Spinner
-                android:id="@+id/countryCodePicker"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/dimen_24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/header">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/labelNumber"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="74dp"
+                android:alpha=".5"
+                android:text="@string/enter_your_mobile_no"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/dimen_12sp"
+                app:fontFamily="@font/inter_regular"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <View
-                android:layout_width="@dimen/dimen_1dp"
-                android:layout_height="match_parent"
-                android:background="@color/black" />
-
-            <com.google.android.material.textfield.TextInputEditText
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/numberContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/dimen_8dp"
-                android:background="@android:color/transparent"
-                android:inputType="number"
-                android:textColor="@color/color_dark_blue"
-                android:textSize="@dimen/dimen_18sp" />
+                android:layout_marginTop="@dimen/dimen_16dp"
+                android:gravity="center_vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/labelNumber">
 
-        </androidx.appcompat.widget.LinearLayoutCompat>
+                <Spinner
+                    android:id="@+id/countryCodePicker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_1dp"
-            android:backgroundTint="@color/color_light_blue"
-            app:layout_constraintTop_toBottomOf="@id/numberContainer" />
+                <View
+                    android:layout_width="@dimen/dimen_1dp"
+                    android:layout_height="match_parent"
+                    android:alpha=".2"
+                    android:background="@color/black" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etNumber"
+                    android:layout_width="match_parent"
+                    android:maxLength="@{viewModel.mobileMaxLength}"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_8dp"
+                    android:background="@android:color/transparent"
+                    android:inputType="number"
+                    android:textColor="@color/color_dark_blue"
+                    android:textSize="@dimen/dimen_18sp" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_1dp"
+                android:layout_marginTop="@dimen/dimen_4dp"
+                android:background="@color/color_light_blue"
+                app:layout_constraintTop_toBottomOf="@id/numberContainer" />
 
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnSubmit"
-            style="@style/AppMainButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/dimen_48dp"
-            android:text="@string/get_otp"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSubmit"
+                style="@style/AppMainButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_48dp"
+                android:text="@string/get_otp"
+                app:layout_constraintBottom_toBottomOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

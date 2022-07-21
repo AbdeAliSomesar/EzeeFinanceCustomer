@@ -1,69 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".support.SupportFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.core.widget.NestedScrollView
+    <data>
+
+        <variable
+            name="viewModel"
+            type="in.ezeefinance.customer.support.SupportViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:context=".support.SupportFragment">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/dimen_24dp">
+            android:layout_height="match_parent">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/nameContainer"
-                style="@style/AppTextInputLayoutStyle"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimen_32dp"
-                app:layout_constraintTop_toTopOf="parent">
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="@dimen/dimen_24dp"
+                android:layout_marginBottom="@dimen/dimen_24dp"
+                android:paddingBottom="@dimen/dimen_24dp">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    style="@style/AppTextInputEditText"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/nameContainer"
+                    style="@style/AppTextInputLayoutStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/full_name"
-                    android:maxLines="1" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:layout_marginTop="@dimen/dimen_32dp"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="@{viewModel.nameMaxLength}"
+                    app:layout_constraintTop_toTopOf="parent">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/emailContainer"
-                style="@style/AppTextInputLayoutStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimen_20dp"
-                app:layout_constraintTop_toBottomOf="@id/nameContainer">
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/AppTextInputEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/full_name"
+                        android:maxLength="@{viewModel.nameMaxLength}"
+                        android:maxLines="1" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-                <com.google.android.material.textfield.TextInputEditText
-                    style="@style/AppTextInputEditText"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/emailContainer"
+                    style="@style/AppTextInputLayoutStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/email_address"
-                    android:maxLines="1" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:layout_marginTop="@dimen/dimen_20dp"
+                    app:layout_constraintTop_toBottomOf="@id/nameContainer">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/messageContainer"
-                style="@style/AppTextInputLayoutStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimen_20dp"
-                android:hint="@string/message"
-                app:layout_constraintTop_toBottomOf="@id/emailContainer">
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/AppTextInputEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/email_address"
+                        android:maxLines="1" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-                <com.google.android.material.textfield.TextInputEditText
-                    style="@style/AppTextInputEditText"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/messageContainer"
+                    style="@style/AppTextInputLayoutStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="top"
-                    android:maxLines="9"
-                    android:minLines="9" />
-            </com.google.android.material.textfield.TextInputLayout>
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.core.widget.NestedScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+                    android:layout_marginTop="@dimen/dimen_20dp"
+                    android:hint="@string/message"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="@{viewModel.supportMessageMaxLength}"
+                    app:layout_constraintTop_toBottomOf="@id/emailContainer">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/AppTextInputEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="top"
+                        android:maxLength="@{viewModel.supportMessageMaxLength}"
+                        android:maxLines="9"
+                        android:minLines="9" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSubmit"
+                    style="@style/AppMainButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_64dp"
+                    android:text="@string/submit"
+                    app:layout_constraintTop_toBottomOf="@id/messageContainer" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

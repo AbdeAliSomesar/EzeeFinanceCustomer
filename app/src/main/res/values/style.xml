@@ -11,7 +11,13 @@
     </style>
 
     <style name="AppTextInputEditText">
+        <item name="android:textSize">@dimen/dimen_16sp</item>
+        <item name="fontFamily">@font/inter_medium</item>
+    </style>
 
+    <style name="AppTextInputEditTextDisabled" parent="AppTextInputEditText">
+        <item name="android:textColor">@color/edit_text_color_selector</item>
+        <item name="android:enabled">false</item>
     </style>
 
     <style name="AppMainButton" parent="Widget.MaterialComponents.Button.UnelevatedButton">

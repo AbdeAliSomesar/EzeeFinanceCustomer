@@ -4,6 +4,7 @@ import `in`.ezeefinance.customer.R
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.WindowManager
 import androidx.activity.result.contract.ActivityResultContract
 import androidx.appcompat.app.AppCompatActivity
 
@@ -16,6 +17,7 @@ class AuthenticationActivity : AppCompatActivity() {
     companion object : ActivityResultContract<Boolean?, Boolean>() {
         override fun createIntent(context: Context, input: Boolean?) = Intent().apply {
             setClass(context, AuthenticationActivity::class.java)
+
         }
 
         override fun parseResult(resultCode: Int, intent: Intent?) = resultCode == RESULT_OK

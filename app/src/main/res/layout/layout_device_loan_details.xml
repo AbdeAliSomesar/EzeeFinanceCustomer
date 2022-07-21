@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="loanDetails"
+            type="in.ezeefinance.customer.entities.LoanDetails" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_24dp">
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/labelLoanId"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/loan_id"
+            android:textSize="@dimen/dimen_16sp"
+            app:fontFamily="@font/inter_bold"
+            app:layout_constraintEnd_toStartOf="@+id/tvLoanId"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvLoanId"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_8dp"
+            android:textSize="@dimen/dimen_16sp"
+            android:text="@{loanDetails.id}"
+            app:fontFamily="@font/inter_bold"
+            app:layout_constraintBaseline_toBaselineOf="@id/labelLoanId"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline"
+            tools:text="DMI001342535" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/labelPainAmount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_8dp"
+            android:gravity="start"
+            android:text="@string/paid"
+            android:textSize="@dimen/dimen_12sp"
+            app:fontFamily="@font/inter_semi_bold"
+            app:layout_constraintEnd_toStartOf="@id/guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/labelLoanId" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvPaidAmount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_8dp"
+            android:gravity="start"
+            android:text="@{@string/rs_amount(loanDetails.paid)}"
+            android:textSize="@dimen/dimen_12sp"
+            app:fontFamily="@font/inter_semi_bold"
+            app:layout_constraintBaseline_toBaselineOf="@id/labelPainAmount"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline"
+            tools:text="7000" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/labelDueDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_8dp"
+            android:text="@string/due_date"
+            android:textSize="@dimen/dimen_12sp"
+            app:fontFamily="@font/inter_semi_bold"
+            app:layout_constraintEnd_toStartOf="@id/guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/labelPainAmount" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvDueDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_8dp"
+            android:textSize="@dimen/dimen_12sp"
+            android:text="@{loanDetails.dueDate}"
+            app:fontFamily="@font/inter_semi_bold"
+            app:layout_constraintBaseline_toBaselineOf="@id/labelDueDate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline"
+            tools:text="05 May 4:59" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="88dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

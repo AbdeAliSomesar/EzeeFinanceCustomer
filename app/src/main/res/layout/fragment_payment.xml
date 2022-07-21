@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="in.ezeefinance.customer.project.ProjectHomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="@dimen/dimen_16sp"
+        tools:context=".payment.PaymentFragment">
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvHeading"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/pay_online_or_by_cash"
+            android:textSize="@dimen/dimen_heading"
+            app:fontFamily="@font/inter_semi_bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/amountCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_24dp"
+            app:cardCornerRadius="@dimen/dimen_8dp"
+            app:layout_constraintTop_toBottomOf="@id/tvHeading"
+            app:strokeColor="@color/color_light_gray"
+            app:strokeWidth="@dimen/dimen_1dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimen_8dp"
+                android:layout_marginVertical="@dimen/dimen_8dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/labelAmount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/receivable_payment"
+                    android:textColor="@color/color_dark_gray"
+                    android:textSize="@dimen/dimen_14sp"
+                    app:fontFamily="@font/inter_semi_bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvAmount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_8dp"
+                    android:layout_marginTop="@dimen/dimen_24dp"
+                    android:text="@{@string/Rupee_double(viewModel.selectedEmi.amount)}"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/dimen_14sp"
+                    app:fontFamily="@font/inter_semi_bold"
+                    app:layout_constraintBaseline_toBaselineOf="@id/labelAmount"
+                    app:layout_constraintStart_toEndOf="@id/labelAmount"
+                    tools:text="20000" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvRemainingAmount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_12dp"
+                    android:textColor="@color/color_granite_gray"
+                    android:textSize="@dimen/dimen_14sp"
+                    app:fontFamily="@font/inter_regular"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/labelAmount"
+                    tools:text="Remaining payment: 20,999" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <include
+            android:id="@+id/collectOnlineCard"
+            layout="@layout/layout_card_payment_option"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_24dp"
+            app:layout_constraintTop_toBottomOf="@id/amountCard" />
+
+        <include
+            android:id="@+id/cashCard"
+            layout="@layout/layout_card_payment_option"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_16dp"
+            app:layout_constraintTop_toBottomOf="@id/collectOnlineCard" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

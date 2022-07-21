@@ -2,6 +2,8 @@ package `in`.ezeefinance.customer.authentication
 
 import `in`.ezeefinance.customer.R
 import `in`.ezeefinance.customer.databinding.FragmentVerifyOtpBinding
+import `in`.ezeefinance.customer.project.ProjectHomeActivity
+import `in`.ezeefinance.customer.utils.showKeyboard
 import android.os.Bundle
 import android.view.KeyEvent
 import android.view.LayoutInflater
@@ -16,6 +18,7 @@ import androidx.navigation.fragment.findNavController
 class VerifyOtpFragment : Fragment(), View.OnKeyListener, View.OnFocusChangeListener {
     private lateinit var binding: FragmentVerifyOtpBinding
     private val viewModel by viewModels<AuthenticationViewModel>()
+    private val projectHomeActivity = registerForActivityResult(ProjectHomeActivity) {}
     private var deleted = false
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,6 +36,7 @@ class VerifyOtpFragment : Fragment(), View.OnKeyListener, View.OnFocusChangeList
     private fun setUp() {
         setUpHeader()
         setUpOTPContainer()
+        binding.digit4.requestFocus()
         activity?.onBackPressedDispatcher?.addCallback(object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 viewModel.otp.value = ""
@@ -40,7 +44,8 @@ class VerifyOtpFragment : Fragment(), View.OnKeyListener, View.OnFocusChangeList
             }
         })
         binding.btnSubmit.setOnClickListener {
-
+            projectHomeActivity.launch(null)
+            activity?.finish()
         }
     }
 
@@ -116,21 +121,22 @@ class VerifyOtpFragment : Fragment(), View.OnKeyListener, View.OnFocusChangeList
 
     override fun onFocusChange(v: View?, hasFocus: Boolean) {
         if (hasFocus)
-            binding.apply {
-                when (v?.id) {
-                    digit4.id -> {
-                        if (digit3.text.isNullOrBlank())
-                            digit3.requestFocus()
-                    }
-                    digit3.id -> {
-                        if (digit2.text.isNullOrBlank())
-                            digit2.requestFocus()
-                    }
-                    digit2.id -> {
-                        if (digit1.text.isNullOrBlank())
-                            digit1.requestFocus()
-                    }
+            v?.showKeyboard(context)
+        binding.apply {
+            when (v?.id) {
+                digit4.id -> {
+                    if (digit3.text.isNullOrBlank())
+                        digit3.requestFocus()
+                }
+                digit3.id -> {
+                    if (digit2.text.isNullOrBlank())
+                        digit2.requestFocus()
+                }
+                digit2.id -> {
+                    if (digit1.text.isNullOrBlank())
+                        digit1.requestFocus()
                 }
             }
+        }
     }
 }

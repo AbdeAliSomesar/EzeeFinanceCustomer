@@ -5,6 +5,9 @@ import `in`.ezeefinance.customer.databinding.ActivityProjectHomeBinding
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.view.WindowInsetsController
+import android.view.WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS
 import androidx.activity.result.contract.ActivityResultContract
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -20,6 +23,7 @@ class ProjectHomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityProjectHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setStatusBar()
         setUpBottomNav()
     }
 
@@ -34,6 +38,14 @@ class ProjectHomeActivity : AppCompatActivity() {
                 bottomNavigationView, navController
             )
         }
+    }
+
+    fun setTitle(title:String){
+        binding.header.tvHeading.text = title
+    }
+
+    fun setStatusBar(){
+        window?.insetsController?.setSystemBarsAppearance(APPEARANCE_LIGHT_STATUS_BARS, APPEARANCE_LIGHT_STATUS_BARS)
     }
 
     companion object : ActivityResultContract<Boolean?, Boolean>() {

@@ -7,11 +7,18 @@ data class EMIInfo(
     val month: String,
     val amount: Double,
     val state: EMIState,
-    val colorCode: String
+    val loanDetails:LoanDetails? = null
 )
 
-enum class EMIState(@RawRes val colorId: Int) {
-    PAID(R.color.colorPrimary),
-    PENDING(R.color.color_orange),
-    REMAINING(R.color.colorPrimaryVariant)
+enum class EMIState(@RawRes val colorId: Int, val text: String) {
+    PAID(R.color.colorPrimary,"PAID"),
+    PENDING(R.color.color_orange, "PAY NOW"),
+    REMAINING(R.color.colorPrimaryVariant, "REMAINING")
 }
+
+data class LoanDetails(
+    val id: String,
+    val totalAmount:Double,
+    val paid: Double,
+    val DueDate: String
+)

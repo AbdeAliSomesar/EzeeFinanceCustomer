@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="in.ezeefinance.customer.entities.Device" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/dimen_12dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image"
+            android:layout_width="@dimen/dimen_108dp"
+            android:layout_height="@dimen/dimen_124dp"
+            android:src="@drawable/ic_device_new"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/dimen_32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/image"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{item.model}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen_16sp"
+                app:fontFamily="@font/inter_semi_bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Samsung Galaxy M53" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imDote1"
+                android:layout_width="@dimen/dimen_8dp"
+                android:layout_height="@dimen/dimen_8dp"
+                android:src="@drawable/ic_circle_green"
+                android:tint="@color/color_granite_gray"
+                app:layout_constraintBottom_toBottomOf="@id/tvProcessor"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvProcessor" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvProcessor"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_8dp"
+                android:layout_marginTop="@dimen/dimen_12dp"
+                android:text="@{item.processorName}"
+                android:textColor="@color/color_granite_gray"
+                android:textSize="@dimen/dimen_12sp"
+                app:fontFamily="@font/inter_medium"
+                app:layout_constraintStart_toEndOf="@id/imDote1"
+                app:layout_constraintTop_toBottomOf="@id/tvTitle"
+                tools:text="Media MT6594" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imDote2"
+                android:layout_width="@dimen/dimen_8dp"
+                android:layout_height="@dimen/dimen_8dp"
+                android:src="@drawable/ic_circle_green"
+                android:tint="@color/color_granite_gray"
+                app:layout_constraintBottom_toBottomOf="@id/tvCamara"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvCamara" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvCamara"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_8dp"
+                android:layout_marginTop="@dimen/dimen_8dp"
+                android:text="@{item.camara}"
+                android:textColor="@color/color_granite_gray"
+                android:textSize="@dimen/dimen_12sp"
+                app:fontFamily="@font/inter_medium"
+                app:layout_constraintStart_toEndOf="@id/imDote2"
+                app:layout_constraintTop_toBottomOf="@id/tvProcessor"
+                tools:text="64MP+5MP+2MP" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imDote3"
+                android:layout_width="@dimen/dimen_8dp"
+                android:layout_height="@dimen/dimen_8dp"
+                android:src="@drawable/ic_circle_green"
+                android:tint="@color/color_granite_gray"
+                app:layout_constraintBottom_toBottomOf="@id/tvSize"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvSize" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvSize"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_8dp"
+                android:layout_marginTop="@dimen/dimen_8dp"
+                android:text="@{item.size}"
+                android:textColor="@color/color_granite_gray"
+                android:textSize="@dimen/dimen_12sp"
+                app:fontFamily="@font/inter_medium"
+                app:layout_constraintStart_toEndOf="@id/imDote3"
+                app:layout_constraintTop_toBottomOf="@id/tvCamara"
+                tools:text="6.6 Inches" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imDote4"
+                android:layout_width="@dimen/dimen_8dp"
+                android:layout_height="@dimen/dimen_8dp"
+                android:src="@drawable/ic_circle_green"
+                android:tint="@color/color_granite_gray"
+                app:layout_constraintBottom_toBottomOf="@id/tvBattery"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvBattery" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvBattery"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_8dp"
+                android:layout_marginTop="@dimen/dimen_8dp"
+                android:text="@{item.battery}"
+                android:textColor="@color/color_granite_gray"
+                android:textSize="@dimen/dimen_12sp"
+                app:fontFamily="@font/inter_medium"
+                app:layout_constraintStart_toEndOf="@id/imDote4"
+                app:layout_constraintTop_toBottomOf="@id/tvSize"
+                tools:text="5000 mAh" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/labelDevicePrice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_12dp"
+                android:textColor="@color/color_granite_gray"
+                android:textSize="@dimen/dimen_12sp"
+                app:fontFamily="@font/inter_medium"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvBattery"
+                tools:text="Device Price:" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvPrice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_8dp"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/dimen_12sp"
+                app:fontFamily="@font/inter_medium"
+                app:layout_constraintBaseline_toBaselineOf="@id/labelDevicePrice"
+                app:layout_constraintStart_toEndOf="@id/labelDevicePrice"
+                tools:text="₹28499.00" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBaseline_toBaselineOf="@id/labelDevicePrice"
+                app:layout_constraintStart_toEndOf="@id/labelDevicePrice" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cardContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_16dp"
+                android:background="@drawable/bg_stroke_1dp_rounded_4dp"
+                android:paddingVertical="@dimen/dimen_12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/labelDevicePrice"
+                tools:layout_editor_absoluteX="40dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvTenure"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textSize="@dimen/dimen_10sp"
+                    android:text="@string/tenure"
+                    android:textColor="@color/colorPrimaryVariant"
+                    app:layout_constraintEnd_toStartOf="@+id/tvEmi"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tenure"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_16dp"
+                    android:gravity="center"
+                    android:textColor="@color/color_granite_gray"
+                    android:textSize="@dimen/dimen_10sp"
+
+                    app:fontFamily="@font/inter_semi_bold"
+                    app:layout_constraintEnd_toEndOf="@id/tvTenure"
+                    app:layout_constraintStart_toStartOf="@id/tvTenure"
+                    app:layout_constraintTop_toBottomOf="@id/tvTenure"
+                    tools:text="8" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvEmi"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/emi"
+                    android:textSize="@dimen/dimen_10sp"
+                    android:textColor="@color/colorPrimaryVariant"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tvTenure"
+                    app:layout_constraintEnd_toStartOf="@+id/tvDownPayment"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/tvTenure" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvEmiAmount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_16dp"
+                    android:gravity="center"
+                    android:textColor="@color/color_granite_gray"
+                    android:textSize="@dimen/dimen_10sp"
+                    app:fontFamily="@font/inter_semi_bold"
+                    android:text="@{@string/Rupee_double(item.emiAmount)}"
+                    app:layout_constraintEnd_toEndOf="@id/tvEmi"
+                    app:layout_constraintStart_toStartOf="@id/tvEmi"
+                    app:layout_constraintTop_toBottomOf="@id/tvEmi"
+                    tools:text="9000" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvDownPayment"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textSize="@dimen/dimen_10sp"
+                    android:text="@string/down_payment"
+                    android:textColor="@color/colorPrimaryVariant"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tvEmi"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/tvEmi" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_16dp"
+                    android:gravity="center"
+                    android:textColor="@color/color_granite_gray"
+                    android:text="@{@string/Rupee_double(item.downPayment)}"
+                    android:textSize="@dimen/dimen_10sp"
+                    app:fontFamily="@font/inter_semi_bold"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tvEmiAmount"
+                    app:layout_constraintEnd_toEndOf="@id/tvDownPayment"
+                    app:layout_constraintStart_toStartOf="@id/tvDownPayment"
+                    tools:text="5000" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvColor"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_16dp"
+                android:text="@string/color"
+                android:textSize="@dimen/dimen_16sp"
+                app:fontFamily="@font/inter_medium"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardContainer" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/dimen_16dp"
+                android:id="@+id/selectedColor"
+                android:layout_height="@dimen/dimen_16dp"
+                android:background="@drawable/ic_circle_green"
+                app:layout_constraintStart_toEndOf="@id/tvColor"
+                app:layout_constraintBottom_toBottomOf="@id/tvColor"
+                app:layout_constraintTop_toTopOf="@id/tvColor"
+                android:layout_marginStart="@dimen/dimen_12dp"
+                android:src="@drawable/ic_circle_green"
+                tools:backgroundTint="@color/color_granite_gray"
+                tools:tint="@color/design_default_color_primary_variant"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
